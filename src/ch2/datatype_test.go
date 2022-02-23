@@ -37,6 +37,9 @@ func TestPoint(t *testing.T) {
 }
 
 func TestString(t *testing.T) {
-	var s string         //
-	t.Log("*" + s + "*") //输出:**,为空值
+	var s string         //string在go中是个数值类型，初始化为0值的时候默认初始化为空字符传
+	t.Log("*" + s + "*") //输出:**,为空字符串
+	t.Log(len(s))        //长度为0
+	// if s == nil {}  // nil是go的null，但实际是空字符串,所以不能使用这种方式判断是否初始化
+	// if s == "" {} //需要这样判断
 }
